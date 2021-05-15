@@ -18,6 +18,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
+      PostMailer.with(user: current_user, post: @post).post_created.deliver_later
       redirect_to @post, notice: "Post was successfully created."
     else
       render :new, status: :unprocessable_entity
