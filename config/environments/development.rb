@@ -6,6 +6,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://4709a2f39b264a28ac87e8cc7246bcda.vfs.cloud9.eu-central-1.amazonaws.com' }
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -39,7 +40,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
